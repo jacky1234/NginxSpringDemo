@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>前后端测试</title>
 </head>
 <body>
@@ -10,9 +11,14 @@
 
     <script>
         async function fetchData() {
-            const res = await fetch('/api/hello');
-            const text = await res.text();
-            document.getElementById('result').textContent = text;
+            try {
+                const res = await fetch('/api/hello');
+                const text = await res.text();
+                document.getElementById('result').textContent = text;
+            } catch (error) {
+                document.getElementById('result').textContent = 'Error: ' + error.message;
+                console.error('Error:', error);
+            }
         }
     </script>
 </body>
