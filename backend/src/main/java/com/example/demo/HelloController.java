@@ -11,5 +11,10 @@ public class HelloController {
     public String hello() {
         return "Hello from Spring Boot!";
     }
+
+    @GetMapping("/api/test")
+    public String test() {
+        return "Test API endpoint";
+    }
 }
 

@@ -31,9 +31,14 @@ services:
       # 将这个卷挂载到容器的 /app/data 目录。 即使容器重启或删除，/app/data 目录中的数据也会被保留
       - backend-data:/app/data
 
+# 定义 Docker 网络
 networks:
+  # 网络名称
   app-network:
+    # 网络驱动
     driver: bridge
 
+# 定义 Docker 数据卷
 volumes:
+  # 数据卷名称
   backend-data: 
